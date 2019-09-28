@@ -51,6 +51,11 @@ class RPCServer
             {
                 result= "" + div(val1,val2);
             }
+            else if(methodName.equalsIgnoreCase("mod"))
+            {
+                result= "" + mod(val1,val2);
+            }
+            
             byte b1[]=result.getBytes();
             DatagramSocket ds1 = new DatagramSocket();
             DatagramPacket dp1 = new DatagramPacket(b1,b1.length,InetAddress.getLocalHost(),1300);
@@ -79,6 +84,11 @@ class RPCServer
     {
         return val3/val4;
     }
+    public float mod(float val3, float val4)
+    {
+        return val3%val4;
+    }
+    
     public static void main(String[] args)
     {
         new RPCServer();
