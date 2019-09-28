@@ -55,6 +55,10 @@ class RPCServer
             {
                 result= "" + mod(val1,val2);
             }
+            else if(methodName.equalsIgnoreCase("pow"))
+            {
+                result= "" + pow(val1,val2);
+            }
             
             byte b1[]=result.getBytes();
             DatagramSocket ds1 = new DatagramSocket();
@@ -87,6 +91,10 @@ class RPCServer
     public float mod(float val3, float val4)
     {
         return val3%val4;
+    }
+    public float pow(float val3, float val4)
+    {
+        return Math.pow(val3,val4);
     }
     
     public static void main(String[] args)
