@@ -1,5 +1,6 @@
 import java.util.*;
 import java.net.*;
+import java.lang.*;
 class RPCServer
 {
     DatagramSocket ds;
