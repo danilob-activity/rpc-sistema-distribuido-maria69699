@@ -93,7 +93,7 @@ class RPCServer
     {
         return val3%val4;
     }
-    public float pow(float val3, float val4)
+    public double pow(double val3, double val4)
     {
         return Math.pow(val3,val4);
     }
