@@ -10,7 +10,7 @@ class RPCClient
             DatagramSocket ds = new DatagramSocket();
             DatagramSocket ds1 = new DatagramSocket(1300);
             System.out.println("\nRPC Client\n");
-            System.out.println("Insira a operação (ex: add, sub, mult, div) e os números que deseja calcular \n");
+            System.out.println("Insira a operação (ex: add, sub, mult, div, mod, pow) e os números que deseja calcular \n");
             while (true)
             {
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
