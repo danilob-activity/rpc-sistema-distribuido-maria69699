@@ -61,7 +61,7 @@ class RPCServer
             {
                 result= "" + pow(val1,val2);
             }
-            result = "(Maria" + result;
+            result = "(Maria)" + result;
             byte b1[]=result.getBytes();
             DatagramSocket ds1 = new DatagramSocket();
             DatagramPacket dp1 = new DatagramPacket(b1,b1.length,dp.getAddress(),1300);
