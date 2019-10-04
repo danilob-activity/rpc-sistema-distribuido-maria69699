@@ -24,7 +24,7 @@ class RPCClient
                 DatagramPacket dp =  new DatagramPacket(b,b.length,ia,1200);// msg, tam, ip, porta
                 byte b1[] = new byte[100];
                 ds.send(dp);
-                dp = new DatagramPacket(b,b.length);
+                dp = new DatagramPacket(b1,b1.length);
                 ds1.receive(dp);
                 String s = new String(dp.getData(),0,dp.getLength());
                 System.out.println("\nResultado =" + s +"\n");
