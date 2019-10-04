@@ -9,13 +9,14 @@ class RPCServer
     float val1,val2;
     RPCServer()
     {
+        result = "Maria";
         try
         {
             ds=new DatagramSocket(1200);
             byte b[]=new byte[4096];
             while(true)
             {
-            dp=new DatagramPacket(b,b.length);
+            dp=new DatagramPacket(b,b.length);//msg e tam
             ds.receive(dp);
             str=new String(dp.getData(),0,dp.getLength());
             if(str.equalsIgnoreCase("q"))
@@ -35,7 +36,7 @@ class RPCServer
                 }
             }
             System.out.println(str);
-            InetAddress ia = InetAddress.getLocalHost();
+            //InetAddress ia = InetAddress.getByName("10.106.6.255");
             if(methodName.equalsIgnoreCase("add"))
             {
                 result= "" + add(val1,val2);
@@ -63,7 +64,7 @@ class RPCServer
             
             byte b1[]=result.getBytes();
             DatagramSocket ds1 = new DatagramSocket();
-            DatagramPacket dp1 = new DatagramPacket(b1,b1.length,InetAddress.getLocalHost(),1300);
+            DatagramPacket dp1 = new DatagramPacket(b1,b1.length,dp.getAddress(),1300);
             System.out.println("result : "+result+"\n");
             ds1.send(dp1);
             }
